@@ -6,9 +6,9 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
 # ===== 设置自定义参数 =====
-echo "===== 欧加真SM8650通用6.1.118 A15 OKI内核本地编译脚本 By Coolapk@cctv18 ====="
+echo "===== 欧加真SM8650通用6.1.115 A15 (天玑特供)OKI内核本地编译脚本 By Coolapk@cctv18 ====="
 echo ">>> 读取用户配置..."
-SOC_BRANCH=${SOC_BRANCH:-sm8650}
+SOC_BRANCH=${SOC_BRANCH:-mt6989}
 MANIFEST=${MANIFEST:-oppo+oplus+realme}
 read -p "请输入自定义内核后缀（默认：android14-11-o-gca13bffobf09）: " CUSTOM_SUFFIX
 CUSTOM_SUFFIX=${CUSTOM_SUFFIX:-android14-11-o-gca13bffobf09}
@@ -75,7 +75,7 @@ echo ">>> 初始化仓库..."
 rm -rf kernel_workspace
 mkdir kernel_workspace
 cd kernel_workspace
-git clone --depth=1 https://github.com/cctv18/android_kernel_common_oneplus_sm8650 -b oneplus/sm8650_v_15.0.0_oneplus12_6.1.118 common
+git clone --depth=1 https://github.com/cctv18/android_kernel_oneplus_mt6989 -b oneplus/mt6989_v_15.0.2_ace5_race common
 echo ">>> 初始化仓库完成"
 
 # ===== 清除 abi 文件、去除 -dirty 后缀 =====
